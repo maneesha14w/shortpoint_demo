@@ -3,7 +3,7 @@ import '../models/todo.dart';
 
 class TodoProvider extends ChangeNotifier {
   bool isEdit = false;
-  int index = -1;
+  int selectedIndex = 0;
 
   var todoList = [
     Todo(todo: 'Training at the gym', isComplete: false, id: 1),
@@ -18,5 +18,10 @@ class TodoProvider extends ChangeNotifier {
         notifyListeners();
       }
     }
+  }
+
+  void isEditToggleMethod(bool value) {
+    isEdit = value;
+    notifyListeners();
   }
 }

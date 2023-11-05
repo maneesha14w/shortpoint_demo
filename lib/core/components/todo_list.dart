@@ -33,7 +33,8 @@ class TodoListWidget extends StatelessWidget {
                 style: context.watch<TodoProvider>().todoList[index].isComplete
                     ? Palette.textStyleStrike
                     : Palette.textStyleNoStrike),
-            trailing: const EditButtonWidget(),
+            trailing: EditButtonWidget(
+                index: context.read<TodoProvider>().todoList[index].id),
           );
         },
       ),

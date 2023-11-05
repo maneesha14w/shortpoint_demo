@@ -5,13 +5,16 @@ import '../../features/Edit or Create/edit_or_create.dart';
 import '../providers/todo_providers.dart';
 
 class EditButtonWidget extends StatelessWidget {
-  const EditButtonWidget({super.key});
+  const EditButtonWidget({super.key, required this.index});
+
+  final int index;
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        context.read<TodoProvider>().isEdit = false;
+        context.read<TodoProvider>().isEditToggleMethod(true);
+        context.read<TodoProvider>().selectedIndex = index;
         Navigator.push(
           context,
           MaterialPageRoute(builder: (context) => const EditOrCreatePage()),

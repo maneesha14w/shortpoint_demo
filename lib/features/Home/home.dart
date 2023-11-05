@@ -17,7 +17,7 @@ class HomePage extends StatelessWidget {
     return Scaffold(
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          context.read<TodoProvider>().isEdit = false;
+          context.read<TodoProvider>().isEditToggleMethod(false);
           Navigator.push(
             context,
             MaterialPageRoute(builder: (context) => const EditOrCreatePage()),
