@@ -1,6 +1,8 @@
 # shortpoint_demo
 
-A new Flutter project.
+To-do app demo for shortpoint.
+
+- Used MVU architecture for structure and [provider](https://pub.dev/packages/provider) for state management.
 
 ## Getting Started
 
