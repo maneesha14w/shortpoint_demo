@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
+import '../../core/providers/todo_providers.dart';
 import '../../theme/palette.dart';
 
 import '../../core/components/go_pro_section.dart';
@@ -15,12 +17,10 @@ class HomePage extends StatelessWidget {
     return Scaffold(
       floatingActionButton: FloatingActionButton(
         onPressed: () {
+          context.read<TodoProvider>().isEdit = true;
           Navigator.push(
             context,
-            MaterialPageRoute(
-                builder: (context) => const EditOrCreatePage(
-                      navType: 'Create',
-                    )),
+            MaterialPageRoute(builder: (context) => const EditOrCreatePage()),
           );
         },
         backgroundColor: Palette.darkBlue,

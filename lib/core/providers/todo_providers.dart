@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import '../models/todo.dart';
 
 class TodoProvider extends ChangeNotifier {
+  bool isEdit = false;
+
   var todoList = [
     Todo(todo: 'Training at the gym', isComplete: false, id: 1),
     Todo(todo: 'Play paddle with friends', isComplete: false, id: 2),
