@@ -14,6 +14,21 @@ class Palette {
     fontSize: 16.0,
   );
 
+  static const textStyleNormalBlue =
+      TextStyle(color: darkBlue, fontSize: 18.0, fontWeight: FontWeight.bold);
+
+  static const textStyleSubtextBlue = TextStyle(
+    color: darkBlue,
+    fontWeight: FontWeight.w100,
+    fontSize: 12.0,
+  );
+
+  static const textStyleSubtextYellow = TextStyle(
+    color: Colors.amber,
+    fontWeight: FontWeight.w100,
+    fontSize: 18.0,
+  );
+
   static const textStyleItalic = TextStyle(
       color: Colors.white,
       fontStyle: FontStyle.italic,
