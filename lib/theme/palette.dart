@@ -30,8 +30,18 @@ class Palette {
   );
 
   static const textStyleItalic = TextStyle(
-      color: Colors.white,
+      color: Colors.black,
       fontStyle: FontStyle.italic,
       fontSize: 25.0,
       fontWeight: FontWeight.w100);
+
+  static const textStyleStrike = TextStyle(
+      color: Colors.black,
+      fontSize: 16.0,
+      decoration: TextDecoration.lineThrough);
+
+  static const textStyleNoStrike = TextStyle(
+    color: Colors.black,
+    fontSize: 16.0,
+  );
 }

@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:shortpoint_demo/theme/palette.dart';
-import '../../core/components/greetings_appbar.dart';
+
+import '../../theme/palette.dart';
+
 import '../../core/components/go_pro_section.dart';
+import '../../core/components/greetings_appbar.dart';
 import '../../core/components/todo_list.dart';
+import '../Edit or Create/edit_or_create.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -11,7 +14,15 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       floatingActionButton: FloatingActionButton(
-        onPressed: createTodo(),
+        onPressed: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+                builder: (context) => const EditOrCreatePage(
+                      navType: 'Create',
+                    )),
+          );
+        },
         backgroundColor: Palette.darkBlue,
         child: const Icon(Icons.add),
       ),
@@ -22,6 +33,4 @@ class HomePage extends StatelessWidget {
       ]),
     );
   }
-
-  createTodo() {}
 }
