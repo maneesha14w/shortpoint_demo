@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:shortpoint_demo/core/components/edit_button.dart';
 import 'package:shortpoint_demo/core/providers/todo_providers.dart';
 
 class TodoListWidget extends StatelessWidget {
@@ -28,7 +29,7 @@ class TodoListWidget extends StatelessWidget {
               },
             ),
             title: Text(context.watch<TodoProvider>().todoList[index].todo),
-            trailing: EditButtonWidget,
+            trailing: EditButtonWidget(),
           );
         },
       ),
