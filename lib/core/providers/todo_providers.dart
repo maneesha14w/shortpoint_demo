@@ -3,6 +3,7 @@ import '../models/todo.dart';
 
 class TodoProvider extends ChangeNotifier {
   bool isEdit = false;
+  int index = -1;
 
   var todoList = [
     Todo(todo: 'Training at the gym', isComplete: false, id: 1),
