@@ -26,11 +26,13 @@ class HomePage extends StatelessWidget {
         backgroundColor: Palette.darkBlue,
         child: const Icon(Icons.add),
       ),
-      body: const Column(children: [
-        GreetingAppBarWidget(),
-        GoProSectionWidget(),
-        TodoListWidget(),
-      ]),
+      body: const SingleChildScrollView(
+        child: Column(children: [
+          GreetingAppBarWidget(),
+          GoProSectionWidget(),
+          TodoListWidget(),
+        ]),
+      ),
     );
   }
 }
