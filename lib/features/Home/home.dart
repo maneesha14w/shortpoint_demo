@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:shortpoint_demo/theme/palette.dart';
 import '../../core/components/greetings_appbar.dart';
 import '../../core/components/go_pro_section.dart';
+import '../../core/components/todo_list.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -17,6 +18,7 @@ class HomePage extends StatelessWidget {
       body: const Column(children: [
         GreetingAppBarWidget(),
         GoProSectionWidget(),
+        TodoListWidget(),
       ]),
     );
   }

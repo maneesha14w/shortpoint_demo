@@ -17,20 +17,23 @@ class GoProSectionWidget extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           const Padding(
-            padding: EdgeInsets.only(top: 30.0, left: 60),
+            padding: EdgeInsets.only(left: 60),
             child: Row(
                 mainAxisAlignment: MainAxisAlignment.start,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  CircleAvatar(
-                    backgroundImage: AssetImage('assets/images/trophy.png'),
-                    backgroundColor: Colors.transparent,
+                  Padding(
+                    padding: EdgeInsets.only(top: 40),
+                    child: CircleAvatar(
+                      backgroundImage: AssetImage('assets/images/trophy.png'),
+                      backgroundColor: Colors.transparent,
+                    ),
                   ),
                   SizedBox(
-                    width: 20,
+                    width: 30,
                   ),
                   Padding(
-                    padding: EdgeInsets.only(bottom: 60.0),
+                    padding: EdgeInsets.only(bottom: 10.0),
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       crossAxisAlignment: CrossAxisAlignment.start,
@@ -43,7 +46,7 @@ class GoProSectionWidget extends StatelessWidget {
                           height: 5.0,
                         ),
                         Text(
-                          "No fuss, no ads, for only \$1 ",
+                          "No fuss, no ads, for only \$1 \n a month",
                           style: Palette.textStyleSubtextBlue,
                         )
                       ],
