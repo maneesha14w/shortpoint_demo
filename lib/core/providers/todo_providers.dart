@@ -24,4 +24,18 @@ class TodoProvider extends ChangeNotifier {
     isEdit = value;
     notifyListeners();
   }
+
+  void editTodo(String text, Todo passedTodo) {
+    for (Todo todo in todoList) {
+      if (todo == passedTodo) {
+        todo.todo = text;
+        notifyListeners();
+      }
+    }
+  }
+
+  void createTodo(String text) {
+    todoList.add(Todo(todo: text, isComplete: false, id: todoList.length + 1));
+    notifyListeners();
+  }
 }

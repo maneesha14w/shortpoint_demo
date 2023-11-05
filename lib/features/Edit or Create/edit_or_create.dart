@@ -23,11 +23,11 @@ class _EditOrCreatePageState extends State<EditOrCreatePage> {
 
   @override
   Widget build(BuildContext context) {
+    var todoProvider = Provider.of<TodoProvider>(context, listen: false);
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Palette.lightBlue,
-        title: Text(
-            context.read<TodoProvider>().isEdit ? 'Edit Task' : 'Add new Todo'),
+        title: Text(todoProvider.isEdit ? 'Edit Task' : 'Add new Todo'),
       ),
       body: Center(
         child: Column(
@@ -46,21 +46,51 @@ class _EditOrCreatePageState extends State<EditOrCreatePage> {
               child: SizedBox(
                 width: 300,
                 child: TextFormField(
-                  initialValue: context.watch<TodoProvider>().isEdit
-                      ? text_controller.text = context
-                          .watch<TodoProvider>()
-                          .todoList[
-                              context.watch<TodoProvider>().selectedIndex - 1]
-                          .todo
-                      : '',
-                  decoration: const InputDecoration(
-                    border: OutlineInputBorder(),
+                  controller: text_controller,
+                  decoration: InputDecoration(
+                    labelText: todoProvider.isEdit
+                        ? text_controller.text = todoProvider
+                            .todoList[todoProvider.selectedIndex - 1].todo
+                        : '',
+                    border: const OutlineInputBorder(),
                   ),
                 ),
               ),
             ),
             const Spacer(),
-            const DoneButton(),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 12.0),
+              child: TextButton(
+                style: TextButton.styleFrom(
+                    backgroundColor: Palette.lightBlue,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(12),
+                    ),
+                    fixedSize: const Size(double.infinity, 48)),
+                onPressed: () {
+                  if (todoProvider.isEdit) {
+                    context.read<TodoProvider>().editTodo(
+                        text_controller.text,
+                        context
+                            .read<TodoProvider>()
+                            .todoList[todoProvider.selectedIndex - 1]);
+                  } else {
+                    context.read<TodoProvider>().createTodo(
+                          text_controller.text,
+                        );
+                  }
+                  Navigator.pop(context);
+                },
+                child: const Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text(
+                        "Done",
+                        style: Palette.textStyleNormal,
+                      )
+                    ]),
+              ),
+            ),
             const Spacer()
           ],
         ),
