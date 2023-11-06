@@ -1,18 +1,67 @@
-# shortpoint_demo
+
+# shortpoint Todo App
 
 To-do app demo for shortpoint.
 
-- Used MVU architecture for structure and [provider](https://pub.dev/packages/provider) for state management.
 
-## Getting Started
+## Features
 
-This project is a starting point for a Flutter application.
+- Create and Edit Todos
+- Complete Todos
+- Fullscreen mode
+- Cross platform
 
-A few resources to get you started if this is your first Flutter project:
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+## Versions
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Tooling used 
+
+```bash
+Flutter 3.13.9 • channel stable 
+Framework • revision d211f42860  • 2023-10-25 
+Tools • Dart 3.1.5 • DevTools 2.25.0
+```
+    
+## Demo
+
+ <img src="https://github.com/maneesha14w/shortpoint_demo/blob/049fb8b16cb77f83ca35e2bab729776f05eefb3e/demo.gif"/>
+
+
+## Feedback
+
+If you have any feedback, please reach out to me at maneesha14w@gmail.com
+
+
+## Optimizations
+
+- Used MVU architecture for feature separation.
+- Only Stateless widgets used except for the EditOrCreate page.
+- Using Provider for state management.
+
+
+## Run Locally
+
+Clone the project
+
+```bash
+  git clone https://github.com/maneesha14w/shortpoint_demo
+```
+
+Go to the project directory
+
+```bash
+  cd shortpoint_demo
+```
+
+Install dependencies
+
+```bash
+  flutter pub get 
+```
+
+Run the app
+
+```bash
+  flutter run --release
+```
+
